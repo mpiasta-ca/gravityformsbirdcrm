@@ -46,23 +46,23 @@ When a Gravity Form is submitted:
 ## Requirements
 
 * Gravity Forms plugin (https://gravityforms.com)
-* Pods plugin: (https://wordpress.org/plugins/pods/)
+* Pods plugin (https://wordpress.org/plugins/pods/)
 
 ## Installation
 
 1. Upload plugin to your WordPress website
 2. Activate plugin
 3. Install Pods plugin
-4. Create a Custom Post Type named `email`
-5. Bird CRM plugin settings
-6. Set "Advanced Field Label" values on the form fields
-7. Attach an email to your form
-8. Map your form fields and attachments
-9. Set conditional logic (optional)
-10. Setup multiple emails (optional)
-11. Setup a staff email (optional)
-12. Edit your Email Template in Bird
-13. Debugging
+4. [Create a Custom Post Type named `email`](#4-create-a-custom-post-type-named-email)
+5. [Bird CRM plugin settings](#5-bird-crm-plugin-settings)
+6. [Set "Advanced Field Label" values on the form fields](#6-set-advanced-field-label-values-on-the-form-fields)
+7. [Attach an email to your form](#7-attach-an-email-to-your-form)
+8. [Map your form fields and attachments](#8-map-your-form-fields)
+9. [Set conditional logic (optional)](#9-set-conditional-logic-optional)
+10. [Setup multiple emails (optional)](#10-setup-multiple-emails-optional)
+11. [Setup a staff email (optional)](#11-setup-a-staff-email-optional)
+12. [Edit your Email Template in Bird](#12-edit-your-email-template-in-bird)
+13. [Debugging](#13-debugging)
 
 ### 4. Create a Custom Post Type named `email`
 
