@@ -92,7 +92,7 @@ Go to: Gravity Forms > Settings > Bird CRM
 
 Connect your Bird CRM account by inputing your API credentials and workspace information.
 
-#### 5a. Setup your API credentials for Bird CRM
+#### 5b. Initial synchronize of Email Templates from Bird
 
 Once connected to the API successfully, click the "Synchronize" button.
 
