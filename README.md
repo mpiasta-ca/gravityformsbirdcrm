@@ -54,14 +54,15 @@ When a Gravity Form is submitted:
 2. Activate plugin
 3. Install Pods plugin
 4. Create a Custom Post Type named `email`
-5a. Setup your API credentials for Bird CRM
-5b. Sync your email template list
+5. Bird CRM plugin settings
 6. Set "Advanced Field Label" values on the form fields
 7. Attach an email to your form
 8. Map your form fields and attachments
 9. Set conditional logic (optional)
 10. Setup multiple emails (optional)
 11. Setup a staff email (optional)
+12. Edit your Email Template in Bird
+13. Debugging
 
 ### 4. Create a Custom Post Type named `email`
 
