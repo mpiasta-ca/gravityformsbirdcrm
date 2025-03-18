@@ -65,9 +65,11 @@ When a Gravity Form is submitted:
 
 ### 4. Create a Custom Post Type named `email`
 
-Create a Custom Post Type name `email` with the following fields.
-
 This will be used to store/sync a list of available Templates from your Bird CRM account.
+
+Go to: Pods > Add New.
+
+Create a new Custom Post Type name `email` (type: `Meta`) with the following values:
 
 ![pods-fields](https://github.com/user-attachments/assets/037944fa-3439-479e-9cba-16c684fc496e)
 
@@ -81,83 +83,83 @@ This will be used to store/sync a list of available Templates from your Bird CRM
 
 ![pods-rest-api](https://github.com/user-attachments/assets/de1947a4-9a82-4f62-9ac6-e5bfb2810f61)
 
-## 5. Bird CRM plugin settings
+### 5. Bird CRM plugin settings
 
 Go to: Gravity Forms > Settings > Bird CRM
 
-### 5a. Setup your API credentials for Bird CRM
+#### 5a. Setup your API credentials for Bird CRM
 
 Connect your Bird CRM account by inputing your API credentials and workspace information.
 
-### 5a. Setup your API credentials for Bird CRM
+#### 5a. Setup your API credentials for Bird CRM
 
 Once connected to the API successfully, click the "Synchronize" button.
 
 ![image](https://github.com/user-attachments/assets/340b28b6-5fa3-424c-8d3f-b28205b83a25)
 
-## 6. Set "Advanced Field Label" values on the form fields
+### 6. Set "Advanced Field Label" values on the form fields
 
-### Email example
+#### Email (field example)
 
 ie. `customer_email`.
 
-In your Email Template, you use it like this: `customer_email`.
+In your Email Template, you use it like this: `{{customer_email}}`.
 
 ![email-field](https://github.com/user-attachments/assets/420ffa11-c0c2-43e4-b7f5-76b559551bfc)
 
-### Name example
+#### Name (field example)
 
 ie. `customer_name` (you don't need to name the other fields).
 
-In your Email Template, you use it like this: `customer_name_first`, `customer_name_last`.
+In your Email Template, you use it like this: `{{customer_name_first}}`, `{{customer_name_last}}`.
 
 ![name-field](https://github.com/user-attachments/assets/cece6dba-9c6c-4cfa-a91e-88f7b58004e3)
 
-### Address example
+#### Address (field example)
 
 ie. `customer_address` (you don't need to name the other fields).
 
-In your Email Template, you use it like this: `customer_address_street_address`, `customer_address_city`, `customer_address_state`, `customer_address_zip_code`, `customer_address_country`, etc.
+In your Email Template, you use it like this: `{{customer_address_street_address}}`, `{{customer_address_city}}`, `{{customer_address_state}}`, `{{customer_address_zip_code}}`, `{{customer_address_country}}`, etc.
 
 ![address-field](https://github.com/user-attachments/assets/c8643b13-3a50-4886-955d-60fd8cd76389)
 
-### Template ID example
+#### Template ID (field example)
 
 If you want to use a Dynamic Template ID (ie. if your Email Template will change based on user input):
 
 ![template-id-field](https://github.com/user-attachments/assets/58647150-e803-4c0c-b190-4e1bea95b59c)
 
-## 7. Attach an email to your form
+### 7. Attach an email to your form
 
-Go to: Gravity Forms > Forms > [Pick your form] > Settings > Bird CRM
+Go to: Gravity Forms > Forms > (Pick a form) > Settings > Bird CRM
 
-### Click "Add new" button
+#### Click "Add new" button
 
 ![add-new](https://github.com/user-attachments/assets/2569b7f2-98cf-47d8-9f1d-e6658f3c028b)
 
-### Pick an action
+#### Pick an action
 
 Choose one of the two options:
 
 ![select-action](https://github.com/user-attachments/assets/6b7c7011-738b-448c-8aa7-a4fdb4c2a20d)
 
-#### 1) Send Email (email template set by form field)
+##### 1) Send Email (email template set by form field)
 
 This options allows you to map a form field to your Email Template ID, which can be set as Hidden or Administrative so it isn't visible on your public form, to set the Email Template based on a field value (ie. dropdown value).
 
 For our use-case, we use Gravity Forms Perks Populate Anything plugin (https://gravitywiz.com/documentation/gravity-forms-populate-anything/) to dynamically load the latest Template IDs from our `email` custom post type.
 
-#### 2) Send Email (global email template)
+##### 2) Send Email (global email template)
 
 This option allows you to select a specific Email Template to always use for this email.
 
 The dropdown will display all the synced Email Templates from your Bird CRM account (if you do not see the latest templates, click the "Synchronize" button on the Gravity Forms > Settings page, or just wait 5 minutes for the scheduled cron task to run).
 
-## 8. Map your form fields
+### 8. Map your form fields
 
 Now you can map the form fields to determine where the email is sent and which Email Template is used.
 
-### 1) Send Email (email template set by form field)
+#### 1) Send Email (email template set by form field)
 
 Only **Email To** field is required (First Name and Last Name are optionally, they will appear in the Email To header).
 
@@ -165,21 +167,27 @@ For **Email Template**, select which field will have the Template ID value of yo
 
 ![email-template-form-field](https://github.com/user-attachments/assets/1fe0ef98-1faa-4496-8492-675b7ba24a06)
 
-### 2) Send Email (global email template)
+#### 2) Send Email (global email template)
 
 For **Email Template**, select from the list of Email Templates synced from your Bird CRM account.
 
 ![email-template-global](https://github.com/user-attachments/assets/13629cfc-54e5-4fb0-abf9-641ef5ba5043)
 
-## 9. Set conditional logic (optional)
+#### Attachments
 
-You can set conditions so the email will ONLY send if All/Any conditions are met.
+If your form has one or more File Upload Fields, you can checkbox each field to include for each email.
+
+If you leave the file upload field unchecked, it will not be attached to the email.
+
+### 9. Set conditional logic (optional)
+
+You can set conditions so the email will ONLY send if ALL/ANY conditions are met.
 
 This feature is good if you want to setup email variations, and use a field value to determine which should send.
 
 ![conditional-send](https://github.com/user-attachments/assets/b2f4b348-da9d-4ebf-a596-a24b4d30451a)
 
-## 10. Setup multiple emails (optional)
+### 10. Setup multiple emails (optional)
 
 You can setup multiple emails to send each time a form is submitted.
 
@@ -187,7 +195,7 @@ Or use Conditionals to determine which should send based on a specific field val
 
 ![email-variations](https://github.com/user-attachments/assets/317f8948-50cb-4c92-86eb-e4f2e180875c)
 
-## 11. Setup a staff email (optional)
+### 11. Setup a staff email (optional)
 
 For sending an internal copy of the form to your staff:
 
@@ -198,11 +206,17 @@ For sending an internal copy of the form to your staff:
 
 ![staff-email-field](https://github.com/user-attachments/assets/ed83ca10-cc87-483a-ba63-9fd1e0728ee2)
 
+### 12. Edit your Email Template in Bird
 
+When you edit your Email Template in Bird CRM, you can insert custom values into your content by pasting the field keys, ie. `{{customer_name_first}}`, `{{customer_name_last}}`, etc.
 
+### 13. Debugging
 
+Try submitting your form to see if the email is sent.
 
+If you are having issues with your form, download the daily log file to see the history of what happened, ie. `/wp-content/uploads/gf_birdcrm_logs/2025-03-18.log`. 
 
+There you can see any error messages, and the contents of the API Request that was sent to Bird CRM, which will show you a list of all the field keys and field values that were sent in the request.
 
 
 
